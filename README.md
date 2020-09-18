@@ -702,6 +702,7 @@ In this exercise, your job is to create biplots and ellipsoids using factoextra'
 # fviz_pca_biplot(pca_output_all, habillage = cars$wheeltype, addEllipses = TRUE, alpha.var = "cos2")
 ```
 
+##### Know more about fviz_pca_biplot: http://www.sthda.com/english/wiki/fviz-pca-quick-principal-component-analysis-data-visualization-r-software-and-data-mining
 #### The Kaiser-Guttman rule and the Scree test
 
 In the video, you saw the three most common methods that people utilize to decide the number of principal components to retain:
