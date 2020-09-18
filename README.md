@@ -17,6 +17,21 @@ Note that, the PCA method is particularly useful when the variables within the d
 
 **Caution:** PCAs primary purpose is NOT as a ways of feature removal! PCA can reduce dimensionality but it wont reduce the number of features / variables in your data. What this means is that you might discover that you can explain 99% of variance in your 1000 feature dataset by just using 3 principal components but you still need those 1000 features to construct those 3 principal components, this also means that in the case of predicting on future data you still need those same 1000 features on your new observations to construct the corresponding principal components.
 
+## Data standardization
+In principal component analysis, variables are often scaled (i.e. standardized). This is particularly recommended when variables are measured in different scales (e.g: kilograms, kilometers, centimeters, …); otherwise, the PCA outputs obtained will be severely affected.
+
+The goal is to make the variables comparable. Generally variables are scaled to have i) standard deviation one and ii) mean zero.
+
+The standardization of data is an approach widely used in the context of gene expression data analysis before PCA and clustering analysis. We might also want to scale the data when the mean and/or the standard deviation of variables are largely different.
+
+When scaling variables, the data can be transformed as follow:
+
+x(i)− mean(x)/sd(x)
+
+Where mean(x) is the mean of x values, and sd(x) is the standard deviation (SD).
+
+The R base function `scale() can be used to standardize the data. It takes a numeric matrix as an input and performs the scaling on the columns.
+
 #### Eigenvector & Eigenvalue
 Just like many things in life, eigenvectors, and eigenvalues come in pairs: every eigenvector has a corresponding eigenvalue. Simply put, an eigenvector is a direction, such as "vertical" or "45 degrees", while an eigenvalue is a number telling you how much variance there is in the data in that direction. The eigenvector with the highest eigenvalue is, therefore, the first principal component.
 
